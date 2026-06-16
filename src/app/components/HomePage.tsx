@@ -8,19 +8,19 @@ interface HomePageProps {
 
 const priorities = [
   {
-    title: "Student Financial Aid",
+    title: "Priority 1",
     description:
-      "Ensuring every admitted student can attend regardless of financial circumstance. Endowed scholarships remove barriers and attract the brightest minds.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada turpis nec arcu tempor, non convallis tortor viverra. Sed sollicitudin est erat, pharetra iaculis orci vestibulum sit amet. Phasellus et consectetur orci.",
   },
   {
-    title: "Faculty Excellence",
+    title: "Priority 2",
     description:
-      "Endowed professorships attract and retain world-class scholars whose research transforms fields and enriches the classroom experience.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada turpis nec arcu tempor, non convallis tortor viverra. Sed sollicitudin est erat, pharetra iaculis orci vestibulum sit amet. Phasellus et consectetur orci.",
   },
   {
-    title: "Research Infrastructure",
+    title: "Priority 3",
     description:
-      "State-of-the-art laboratories, libraries, and digital resources enable discoveries that address the challenges of our time.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada turpis nec arcu tempor, non convallis tortor viverra. Sed sollicitudin est erat, pharetra iaculis orci vestibulum sit amet. Phasellus et consectetur orci.",
   },
 ];
 
@@ -46,7 +46,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
         <div
           className="absolute inset-0 opacity-10"
           style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1562774053-701939374585?w=1600&h=700&fit=crop&auto=format)`,
+            backgroundImage: `url(https://www.nelson.edu/wp-content/uploads/2026/05/Aerial-5.editt_-scaled-e1778107602810.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -63,10 +63,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
               className="text-white leading-tight mb-6"
               style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
             >
-              Building the University <em>Our Future Demands</em>
+              Campaign Tagline <em>Campaign Tagline Cont.</em>
             </h1>
             <p className="text-white/70 leading-relaxed mb-8 max-w-lg">
-              A transformative {fmtMoney(goal)} campaign to invest in people, programs, and places — securing Nelson's next century of excellence.
+              A bold {fmtMoney(goal)} campaign to invest in people, programs, and places — securing Nelson's next century of excellence.
             </p>
             <div className="flex flex-wrap gap-4">
               <button
