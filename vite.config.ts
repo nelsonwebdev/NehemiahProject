@@ -24,6 +24,10 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  build: {
+    outDir: 'docs', // Changes the output folder from dist to docs
+    emptyOutDir: true, // Empties the docs folder before building again
+  },
   resolve: {
     alias: {
       // Alias @ to the src directory
