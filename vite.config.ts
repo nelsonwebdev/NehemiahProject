@@ -28,6 +28,7 @@ export default defineConfig({
     outDir: 'docs', // Changes the output folder from dist to docs
     emptyOutDir: true, // Empties the docs folder before building again
   },
+  base: 'https://github.com/nelsonwebdev/NehemiahProject',
   resolve: {
     alias: {
       // Alias @ to the src directory
