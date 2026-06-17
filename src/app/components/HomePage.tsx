@@ -227,22 +227,22 @@ export function HomePage({ onNavigate }: HomePageProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
-              date: "October 14, 2026",
-              tag: "Milestone",
-              title: "Campaign Surpasses $40 Million — Ahead of Schedule",
-              excerpt: "Unprecedented donor generosity propels the Nehemiah Project past a landmark threshold, six months ahead of projections.",
+              date: "[Date]",
+              tag: "[Tag]",
+              title: "Suspendisse sapien ligula",
+              excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada turpis nec arcu tempor, non convallis tortor viverra. Sed sollicitudin est erat, pharetra iaculis orci vestibulum sit amet. Phasellus et consectetur orci.",
             },
             {
-              date: "September 28, 2026",
-              tag: "Leadership Gift",
-              title: "Alumni Family Pledges $25M to Southwestern College of Bible and Church Ministries",
-              excerpt: "The lead gift will name the School of Engineering and fund 40 doctoral fellowships annually for perpetuity.",
+              date: "[Date]",
+              tag: "[Tag]",
+              title: "Nulla in nisl euismod",
+              excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada turpis nec arcu tempor, non convallis tortor viverra. Sed sollicitudin est erat, pharetra iaculis orci vestibulum sit amet. Phasellus et consectetur orci.",
             },
             {
-              date: "August 5, 2026",
-              tag: "Event",
-              title: "Campaign Kickoff Gala Draws 600 to Historic Commons",
-              excerpt: "Trustees, faculty, and alumni gathered to celebrate the public launch of the most ambitious campaign in university history.",
+              date: "[Date]",
+              tag: "[Tag]",
+              title: "Nullam eleifend nibh",
+              excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada turpis nec arcu tempor, non convallis tortor viverra. Sed sollicitudin est erat, pharetra iaculis orci vestibulum sit amet. Phasellus et consectetur orci.",
             },
           ].map((item) => (
             <article key={item.title} className="border border-border bg-card p-6 group hover:border-primary/40 transition-colors">

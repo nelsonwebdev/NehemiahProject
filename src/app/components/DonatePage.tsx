@@ -16,7 +16,7 @@ export function DonatePage() {
             Make a Gift
           </h1>
           <p className="text-white/60 mt-4 max-w-xl">
-            Your generosity powers scholarships, faculty, research, and the spaces where transformative learning happens.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada turpis nec arcu tempor, non convallis tortor viverra. Sed sollicitudin est erat, pharetra iaculis orci vestibulum sit amet. Phasellus et consectetur orci.
           </p>
         </div>
       </section>
@@ -51,11 +51,11 @@ export function DonatePage() {
                 </p>
               </div>
               {[
-                { amount: "$50", impact: "Funds one week of library access for a student in need" },
-                { amount: "$500", impact: "Supports a summer research stipend for an undergraduate" },
-                { amount: "$2,500", impact: "Contributes to one semester of need-based aid" },
-                { amount: "$10,000", impact: "Seeds an endowed scholarship fund in your name" },
-                { amount: "$50,000+", impact: "Qualifies for our legacy society and named recognition" },
+                { amount: "$50", impact: "Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
+                { amount: "$500", impact: "Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
+                { amount: "$2,500", impact: "Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
+                { amount: "$10,000", impact: "Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
+                { amount: "$50,000+", impact: "Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
               ].map(({ amount, impact }) => (
                 <div key={amount} className="flex gap-4 items-start px-6 py-4 border-b border-border last:border-0 hover:bg-secondary/20 transition-colors">
                   <span
@@ -90,13 +90,13 @@ export function DonatePage() {
             </div>
 
             <p className="mt-8 text-xs text-muted-foreground">
-              Questions? Contact the Office of Gift Planning at{" "}
-              <a href="mailto:giving@nelson.edu" className="text-primary hover:underline underline-offset-4">
-                giving@nelson.edu
+              Questions? Contact the Office of Advancement at{" "}
+              <a href="mailto:advancementoffice@nelson.edu" className="text-primary hover:underline underline-offset-4">
+                advancementoffice@nelson.edu
               </a>{" "}
               or call{" "}
-              <a href="tel:+16175550200" className="text-primary hover:underline underline-offset-4">
-                +1 (617) 555-0200
+              <a href="tel:+19728254639" className="text-primary hover:underline underline-offset-4">
+                (972) 825-4639
               </a>.
             </p>
           </div>
@@ -176,7 +176,7 @@ export function DonatePage() {
           <p className="text-white/40 text-xs">
             {loading
               ? "Loading campaign data…"
-              : `${fmtPct(raised, goal)} of goal · ${fmtDonors(donors)} donors · Campaign ends December 31, 2025`}
+              : `${fmtPct(raised, goal)} of goal · ${fmtDonors(donors)} donors`}
           </p>
         </div>
       </section>
