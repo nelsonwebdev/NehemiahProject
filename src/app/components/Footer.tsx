@@ -77,7 +77,8 @@ export function Footer({ onNavigate }: FooterProps) {
             </div>
             <div className="border-t border-white/10 px-6 py-4 max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
                 <p className="text-white/40 text-xs">
-                    © {new Date().getFullYear()} Nelson University. All rights reserved.
+                    © {new Date().getFullYear()} Nelson University. All rights
+                    reserved.
                 </p>
                 <p
                     className="text-secondary text-xs"

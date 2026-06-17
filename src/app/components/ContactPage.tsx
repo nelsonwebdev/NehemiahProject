@@ -28,7 +28,7 @@ export function ContactPage() {
         const payload = {
             ...form,
             // OPTIONAL: If using Web3Forms, uncomment the line below and paste your access key
-            access_key: "e89d1bab-f05c-4583-b6e7-685ef28caaa6"
+            access_key: "e89d1bab-f05c-4583-b6e7-685ef28caaa6",
         }
 
         try {
