@@ -9,15 +9,11 @@ export function Footer({ onNavigate }: FooterProps) {
         <footer className="bg-primary text-primary-foreground mt-auto">
             <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
                 <div>
-                    <p
-                        style={{
-                            fontFamily: "'Playfair Display', serif",
-                            fontSize: "18px",
-                            fontWeight: 600,
-                        }}
-                    >
-                        Nelson University
-                    </p>
+                    <img
+                        src="https://www.nelson.edu/wp-content/uploads/2026/06/Horizontal-One-Line_Inverse-White-1.png"
+                        alt="Nelson University"
+                        className="h-6 object-contain"
+                    />
                     <p className="mt-3 text-white/60 text-sm leading-relaxed">
                         Founded 1927 · Greater with Faith
                         <br />

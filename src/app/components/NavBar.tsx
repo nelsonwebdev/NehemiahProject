@@ -24,30 +24,13 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
                 <button
                     onClick={() => onNavigate("home")}
-                    className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+                    className="hover:opacity-80 transition-opacity"
                 >
-                    <div className="w-8 h-8 rounded-sm bg-white/20 flex items-center justify-center">
-                        <span
-                            style={{
-                                fontFamily: "'Playfair Display', serif",
-                                color: "#ffffff",
-                                fontWeight: 700,
-                                fontSize: "13px",
-                            }}
-                        >
-                            NU
-                        </span>
-                    </div>
-                    <span
-                        style={{
-                            fontFamily: "'Playfair Display', serif",
-                            fontSize: "16px",
-                            fontWeight: 600,
-                            letterSpacing: "0.02em",
-                        }}
-                    >
-                        Nelson University
-                    </span>
+                    <img
+                        src="https://www.nelson.edu/wp-content/uploads/2026/06/Horizontal-One-Line_Inverse-White-1.png"
+                        alt="Nelson University"
+                        className="h-8 object-contain"
+                    />
                 </button>
 
                 {/* Desktop nav */}

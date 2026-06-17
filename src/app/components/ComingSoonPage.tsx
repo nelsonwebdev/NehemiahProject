@@ -80,30 +80,12 @@ export function ComingSoonPage() {
 
             <div className="relative flex-1 flex flex-col items-center justify-center px-6 py-20 text-center">
                 {/* Wordmark */}
-                <div className="flex items-center gap-3 mb-16">
-                    <div className="w-9 h-9 flex items-center justify-center bg-white/20">
-                        <span
-                            style={{
-                                fontFamily: "'Playfair Display', serif",
-                                color: "#ffffff",
-                                fontWeight: 700,
-                                fontSize: "14px",
-                            }}
-                        >
-                            NU
-                        </span>
-                    </div>
-                    <span
-                        style={{
-                            fontFamily: "'Playfair Display', serif",
-                            fontSize: "17px",
-                            fontWeight: 600,
-                            color: "white",
-                            letterSpacing: "0.02em",
-                        }}
-                    >
-                        Nelson University
-                    </span>
+                <div className="mb-16">
+                    <img
+                        src="https://www.nelson.edu/wp-content/uploads/2026/06/Horizontal-One-Line_Inverse-White-1.png"
+                        alt="Nelson University"
+                        className="h-10 object-contain"
+                    />
                 </div>
 
                 {/* Pre-launch label */}
