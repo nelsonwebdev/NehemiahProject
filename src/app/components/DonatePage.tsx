@@ -59,11 +59,11 @@ export function DonatePage() {
                                 The Nehemiah Project is the most ambitious
                                 undertaking in the university's 100-year
                                 history. Every dollar raised goes directly
-                                toward our three priorities: [Insert priorities
-                                here].
+                                toward our three priorities: <b>[Insert priorities
+                                here]</b>.
                             </p>
                             <p>
-                                A gift to Nelson is not a transaction — it is a
+                                A gift to Nelson is not a transaction, it is a
                                 statement of values. It says that you believe in
                                 the power of education to change lives, that you
                                 want the next generation of students to have the

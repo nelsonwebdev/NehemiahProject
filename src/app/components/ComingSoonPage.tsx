@@ -30,8 +30,8 @@ function CountdownUnit({ value, label }: { value: number; label: string }) {
             <div
                 className="relative flex items-center justify-center border border-white/20 bg-white/10"
                 style={{
-                    width: "clamp(72px, 14vw, 120px)",
-                    height: "clamp(72px, 14vw, 120px)",
+                    width: "clamp(120px, 38vw, 140px)",
+                    height: "clamp(120px, 38vw, 140px)",
                 }}
             >
                 <span
@@ -154,7 +154,14 @@ export function ComingSoonPage() {
                             ? "The campaign has launched"
                             : "Public launch begins in"}
                     </p>
-                    <div className="flex items-start gap-4 sm:gap-6 justify-center">
+                    {/* Mobile: 2×2 grid. Desktop: single row with separators */}
+                    <div className="grid grid-cols-2 gap-4 md:hidden w-full max-w-sm mx-auto">
+                        <CountdownUnit value={days} label="Days" />
+                        <CountdownUnit value={hours} label="Hours" />
+                        <CountdownUnit value={minutes} label="Minutes" />
+                        <CountdownUnit value={seconds} label="Seconds" />
+                    </div>
+                    <div className="hidden md:flex items-start gap-4 md:gap-6 justify-center">
                         <CountdownUnit value={days} label="Days" />
                         <span
                             className="text-white/30 mt-3"
@@ -191,7 +198,7 @@ export function ComingSoonPage() {
                         className="text-white/30 mt-6"
                         style={{
                             fontFamily: "'Inter', sans-serif",
-                            fontSize: "24px",
+                            fontSize: "12px",
                         }}
                     >
                         January 9, 2027
