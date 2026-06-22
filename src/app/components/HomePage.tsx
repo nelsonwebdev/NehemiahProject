@@ -309,7 +309,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     <div className="relative">
                         <div
                             className="bg-muted overflow-hidden"
-                            style={{ aspectRatio: "4/5", maxHeight: "560px" }}
+                            style={{ aspectRatio: "4/4", maxHeight: "600px" }}
                         >
                             <img
                                 src="https://www.nelson.edu/wp-content/uploads/2024/07/Cabinet-8-scaled-e1769009816672.jpg"

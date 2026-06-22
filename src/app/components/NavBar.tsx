@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 
-type Page = "home" | "history" | "news" | "donate" | "contact"
+type Page = "home" | "history" | "news" | "stories" | "donate" | "contact"
 
 interface NavBarProps {
     currentPage: Page
@@ -12,6 +12,7 @@ const navLinks: { label: string; page: Page }[] = [
     { label: "Home", page: "home" },
     { label: "History", page: "history" },
     { label: "News", page: "news" },
+    { label: "Stories", page: "stories" },
     { label: "Donate", page: "donate" },
     { label: "Contact", page: "contact" },
 ]

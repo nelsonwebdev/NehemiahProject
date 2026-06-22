@@ -1,4 +1,4 @@
-type Page = "home" | "history" | "news" | "donate" | "contact"
+type Page = "home" | "history" | "news" | "stories" | "donate" | "contact"
 
 interface FooterProps {
     onNavigate: (page: Page) => void
@@ -30,6 +30,7 @@ export function Footer({ onNavigate }: FooterProps) {
                                 "home",
                                 "history",
                                 "news",
+                                "stories",
                                 "donate",
                                 "contact",
                             ] as Page[]

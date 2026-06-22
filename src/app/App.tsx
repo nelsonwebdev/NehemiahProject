@@ -6,12 +6,13 @@ import { HistoryPage } from "./components/HistoryPage"
 import { NewsPage } from "./components/NewsPage"
 import { DonatePage } from "./components/DonatePage"
 import { ContactPage } from "./components/ContactPage"
+import { StoriesPage } from "./components/StoriesPage"
 import { ComingSoonPage } from "./components/ComingSoonPage"
 import { LAUNCH_DATE } from "./config"
 
 // Set to true to show the pre-launch landing page instead of the full site
 //const COMING_SOON = false
-type Page = "home" | "history" | "news" | "donate" | "contact"
+type Page = "home" | "history" | "news" | "stories" | "donate" | "contact"
 
 export default function App() {
     /* MARKER-MAKE-KIT-INVOKED */
@@ -49,6 +50,7 @@ export default function App() {
                 {currentPage === "home" && <HomePage onNavigate={navigate} />}
                 {currentPage === "history" && <HistoryPage />}
                 {currentPage === "news" && <NewsPage />}
+                {currentPage === "stories" && <StoriesPage />}
                 {currentPage === "donate" && <DonatePage />}
                 {currentPage === "contact" && <ContactPage />}
             </main>
