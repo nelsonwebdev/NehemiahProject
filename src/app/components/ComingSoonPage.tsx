@@ -30,15 +30,15 @@ function CountdownUnit({ value, label }: { value: number; label: string }) {
             <div
                 className="relative flex items-center justify-center border border-white/20 bg-white/10"
                 style={{
-                    width: "clamp(120px, 38vw, 140px)",
-                    height: "clamp(120px, 38vw, 140px)",
+                    width: "clamp(58px, 17vw, 130px)",
+                    height: "clamp(58px, 17vw, 130px)",
                 }}
             >
                 <span
                     className="text-white tabular-nums"
                     style={{
                         fontFamily: "'Playfair Display', serif",
-                        fontSize: "clamp(1.75rem, 5vw, 3.5rem)",
+                        fontSize: "clamp(1.4rem, 7vw, 3.25rem)",
                         fontWeight: 600,
                         lineHeight: 1,
                     }}
@@ -154,40 +154,40 @@ export function ComingSoonPage() {
                             ? "The campaign has launched"
                             : "Public launch begins in"}
                     </p>
-                    {/* Mobile: 2×2 grid. Desktop: single row with separators */}
-                    <div className="grid grid-cols-2 gap-4 md:hidden w-full max-w-sm mx-auto">
-                        <CountdownUnit value={days} label="Days" />
-                        <CountdownUnit value={hours} label="Hours" />
-                        <CountdownUnit value={minutes} label="Minutes" />
-                        <CountdownUnit value={seconds} label="Seconds" />
-                    </div>
-                    <div className="hidden md:flex items-start gap-4 md:gap-6 justify-center">
+                    {/* Single row at all sizes — fluid sizing prevents overflow */}
+                    <div
+                        className="flex items-start justify-center"
+                        style={{ gap: "clamp(4px, 1.5vw, 24px)" }}
+                    >
                         <CountdownUnit value={days} label="Days" />
                         <span
-                            className="text-white/30 mt-3"
+                            className="text-white/30 flex-shrink-0"
                             style={{
-                                fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
+                                fontSize: "clamp(1rem, 4vw, 2.5rem)",
                                 fontFamily: "'Playfair Display', serif",
+                                marginTop: "clamp(10px, 3.5vw, 28px)",
                             }}
                         >
                             :
                         </span>
                         <CountdownUnit value={hours} label="Hours" />
                         <span
-                            className="text-white/30 mt-3"
+                            className="text-white/30 flex-shrink-0"
                             style={{
-                                fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
+                                fontSize: "clamp(1rem, 4vw, 2.5rem)",
                                 fontFamily: "'Playfair Display', serif",
+                                marginTop: "clamp(10px, 3.5vw, 28px)",
                             }}
                         >
                             :
                         </span>
                         <CountdownUnit value={minutes} label="Minutes" />
                         <span
-                            className="text-white/30 mt-3"
+                            className="text-white/30 flex-shrink-0"
                             style={{
-                                fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
+                                fontSize: "clamp(1rem, 4vw, 2.5rem)",
                                 fontFamily: "'Playfair Display', serif",
+                                marginTop: "clamp(10px, 3.5vw, 28px)",
                             }}
                         >
                             :
