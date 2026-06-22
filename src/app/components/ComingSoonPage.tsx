@@ -72,7 +72,7 @@ export function ComingSoonPage() {
             <div
                 className="absolute inset-0 pointer-events-none opacity-5"
                 style={{
-                    backgroundImage: `url(https://www.nelson.edu/wp-content/uploads/2026/05/Aerial-5.editt_-scaled-e1778107602810.jpg)`,
+                    backgroundImage: `url(https://www.nelson.edu/wp-content/uploads/2026/06/Klyde-9-1-scaled.jpg)`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                 }}
