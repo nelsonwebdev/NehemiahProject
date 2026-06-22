@@ -42,6 +42,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
     const { goal, raised, donors, loading, lastUpdated } = useCampaignStats()
     const pct = pctNum(raised, goal)
 
+    const paraStyle = {
+        color: "#000010",
+        opacity: "0.7",
+    }
+
     return (
         <div>
             {/* Hero */}
@@ -52,19 +57,21 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 <div
                     className="absolute inset-0 opacity-10"
                     style={{
-                        backgroundImage: `url(https://www.nelson.edu/wp-content/uploads/2026/05/Aerial-5.editt_-scaled-e1778107602810.jpg)`,
+                        backgroundImage: `url(https://www.nelson.edu/wp-content/uploads/2026/06/Klyde-9-1-scaled.jpg)`,
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                     }}
                 />
-                <div className="relative max-w-7xl mx-auto px-6 py-28 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
+                <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-12">
+                    {/* Headline + buttons */}
+                    <div className="max-w-3xl mb-10">
+                        {/*
                         <p
                             className="text-secondary text-sm uppercase tracking-widest mb-5"
                             style={{ fontFamily: "'Inter', sans-serif" }}
                         >
                             The Nehemiah Project
-                        </p>
+                        </p>*/}
                         <h1
                             className="text-white leading-tight mb-6"
                             style={{
@@ -72,9 +79,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
                                 fontSize: "clamp(2rem, 5vw, 3.5rem)",
                             }}
                         >
-                            Campaign Tagline <em>Campaign Tagline Cont.</em>
+                            <img
+                                src="https://www.nelson.edu/wp-content/uploads/2026/06/Nehemiah.png"
+                                alt="University President"
+                                className="w-1/4 h-full object-cover object-top"
+                            />
+                            Campaign Tagline
                         </h1>
-                        <p className="text-white/70 leading-relaxed mb-8 max-w-lg">
+                        <p className="text-white/70 leading-relaxed mb-8 max-w-xl">
                             A bold {fmtMoney(goal)} campaign to invest in
                             people, programs, and places — securing Nelson's
                             next century of excellence.
@@ -107,52 +119,46 @@ export function HomePage({ onNavigate }: HomePageProps) {
                         </div>
                     </div>
 
-                    {/* Progress card */}
-                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-8">
-                        <div className="flex items-center justify-between mb-6">
-                            <p
-                                className="text-secondary text-xs uppercase tracking-widest"
-                                style={{ fontFamily: "'Inter', sans-serif" }}
-                            >
-                                Campaign Progress
-                            </p>
-                            {lastUpdated && (
-                                <p className="text-white/30 text-xs">
-                                    Updated{" "}
-                                    {lastUpdated.toLocaleTimeString([], {
-                                        hour: "2-digit",
-                                        minute: "2-digit",
-                                    })}
-                                </p>
-                            )}
-                        </div>
-
-                        {/* Progress bar */}
-                        <div className="w-full bg-white/20 h-2 mb-3 overflow-hidden">
+                    {/* Progress strip — full width, slim */}
+                    <div className="border border-white/20 bg-white/10 backdrop-blur-sm px-6 py-5">
+                        {/* Bar */}
+                        <div className="w-full bg-white/20 h-1.5 mb-1 overflow-hidden">
                             <div
-                                className="bg-secondary h-2 transition-all duration-700 ease-out"
+                                className="bg-secondary h-1.5 transition-all duration-700 ease-out"
                                 style={{ width: loading ? "0%" : `${pct}%` }}
                             />
                         </div>
-                        <div className="flex justify-between text-xs text-white/60 mb-8">
+                        <div className="flex justify-between text-xs text-white/40 mb-5">
                             <span>
                                 {loading ? (
-                                    <Shimmer className="w-16 h-3" />
+                                    <Shimmer className="w-16 h-2.5" />
                                 ) : (
                                     `${fmtMoney(raised)} raised`
                                 )}
                             </span>
-                            <span>
-                                {loading ? (
-                                    <Shimmer className="w-16 h-3" />
-                                ) : (
-                                    `${fmtMoney(goal)} goal`
+                            <div className="flex items-center gap-2">
+                                {lastUpdated && (
+                                    <span className="text-white/25">
+                                        Updated{" "}
+                                        {lastUpdated.toLocaleTimeString([], {
+                                            hour: "2-digit",
+                                            minute: "2-digit",
+                                        })}{" "}
+                                        ·
+                                    </span>
                                 )}
-                            </span>
+                                <span>
+                                    {loading ? (
+                                        <Shimmer className="w-16 h-2.5" />
+                                    ) : (
+                                        `${fmtMoney(goal)} goal`
+                                    )}
+                                </span>
+                            </div>
                         </div>
 
-                        {/* Stat grid */}
-                        <div className="grid grid-cols-2 gap-6">
+                        {/* Four stat columns */}
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 border-t border-white/10 pt-5">
                             {[
                                 {
                                     val: loading ? null : fmtMoney(goal),
@@ -173,21 +179,21 @@ export function HomePage({ onNavigate }: HomePageProps) {
                             ].map(({ val, label }) => (
                                 <div key={label}>
                                     {val === null ? (
-                                        <Shimmer className="w-20 h-8 mb-1" />
+                                        <Shimmer className="w-16 h-6 mb-1" />
                                     ) : (
                                         <p
                                             className="text-white"
                                             style={{
                                                 fontFamily:
                                                     "'Playfair Display', serif",
-                                                fontSize: "28px",
+                                                fontSize: "22px",
                                                 fontWeight: 600,
                                             }}
                                         >
                                             {val}
                                         </p>
                                     )}
-                                    <p className="text-white/50 text-xs mt-1 uppercase tracking-wide">
+                                    <p className="text-white/40 text-xs mt-0.5 uppercase tracking-wide">
                                         {label}
                                     </p>
                                 </div>
@@ -249,6 +255,160 @@ export function HomePage({ onNavigate }: HomePageProps) {
                             </p>
                         </div>
                     ))}
+                </div>
+            </section>
+
+            {/* Scripture */}
+            <section style={{ backgroundColor: "#502d7f" }}>
+                <div className="max-w-4xl mx-auto px-6 py-20 text-center">
+                    <p
+                        className="text-white/40 uppercase tracking-widest mb-8"
+                        style={{
+                            fontFamily: "'Inter', sans-serif",
+                            fontSize: "11px",
+                            letterSpacing: "0.2em",
+                        }}
+                    >
+                        Foundational Scripture
+                    </p>
+                    <blockquote
+                        className="text-white"
+                        style={{
+                            fontFamily: "'Playfair Display', serif",
+                            fontSize: "clamp(1.5rem, 3vw, 2.75rem)",
+                            fontWeight: 600,
+                            lineHeight: 1.3,
+                        }}
+                    >
+                        <q>
+                            O Lord, let your ear be attentive to the prayer of
+                            your servant, and to the prayer of your servants who
+                            delight to fear your name, and give success to your
+                            servant today, and grant him mercy in the sight of
+                            this man.
+                        </q>
+                    </blockquote>
+                    <p
+                        className="mt-8"
+                        style={{
+                            fontFamily: "'Playfair Display', serif",
+                            fontSize: "20px",
+                            color: "#c5c0e0",
+                            fontStyle: "italic",
+                        }}
+                    >
+                        Nehemiah 1:11
+                    </p>
+                </div>
+            </section>
+
+            {/* From the President */}
+            <section className="max-w-7xl mx-auto px-6 py-20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    {/* Left: president image */}
+                    <div className="relative">
+                        <div
+                            className="bg-muted overflow-hidden"
+                            style={{ aspectRatio: "4/5", maxHeight: "560px" }}
+                        >
+                            <img
+                                src="https://www.nelson.edu/wp-content/uploads/2024/07/Cabinet-8-scaled-e1769009816672.jpg"
+                                alt="University President"
+                                className="w-full h-full object-cover object-top"
+                            />
+                        </div>
+                        {/* Name plate */}
+                        <div className="absolute bottom-0 left-0 right-0 bg-primary px-6 py-4">
+                            <p
+                                style={{
+                                    fontFamily: "'Playfair Display', serif",
+                                    fontSize: "17px",
+                                    color: "white",
+                                    fontWeight: 600,
+                                }}
+                            >
+                                Dr. Kermit Bridges
+                            </p>
+                            <p
+                                className="text-white/60 text-xs mt-0.5 uppercase tracking-widest"
+                                style={{ fontFamily: "'Inter', sans-serif" }}
+                            >
+                                President, Nelson University
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Right: quote / message */}
+                    <div>
+                        <p
+                            className="text-primary text-xs uppercase tracking-widest mb-4"
+                            style={{ fontFamily: "'Inter', sans-serif" }}
+                        >
+                            From the President
+                        </p>
+                        <h2
+                            className="mb-8"
+                            style={{
+                                fontFamily: "'Playfair Display', serif",
+                                fontSize: "clamp(1.5rem, 3vw, 2rem)",
+                                lineHeight: "1.3",
+                            }}
+                        >
+                            <q>
+                                The Nehemiah Project is the Most Important Work
+                                of Our Generation
+                            </q>
+                        </h2>
+                        <div className="space-y-4 text-muted-foreground text-sm leading-relaxed">
+                            <p style={paraStyle}>
+                                When I consider what Nelson University has
+                                accomplished in its first century, the lives
+                                transformed, the leaders equipped, the Kingdom
+                                work advanced, I am filled with profound
+                                gratitude. But when I look ahead, I see an even
+                                greater opportunity before us.
+                            </p>
+                            <p style={paraStyle}>
+                                The Nehemiah Project is not simply a fundraising
+                                campaign. It is a declaration of faith. Faith
+                                that God is not finished with Nelson University.
+                                Faith that our best days lie ahead. Faith that
+                                together, we can build something worthy of the
+                                calling we have received.
+                            </p>
+                            <p style={paraStyle}>
+                                I invite you to join us. Every gift, of every
+                                size, is an act of investment in the next
+                                generation of students who will walk through our
+                                doors. Your generosity today will shape the
+                                Nelson of tomorrow.
+                            </p>
+                        </div>
+                        {/* Signature */}
+                        <div className="mt-8 pt-8 border-t border-border flex items-center gap-4">
+                            <div>
+                                <p
+                                    style={{
+                                        fontFamily: "'Playfair Display', serif",
+                                        fontSize: "15px",
+                                        fontStyle: "italic",
+                                    }}
+                                >
+                                    In His service,
+                                </p>
+                                <p
+                                    className="mt-1"
+                                    style={{
+                                        fontFamily: "'Playfair Display', serif",
+                                        fontSize: "17px",
+                                        fontWeight: 600,
+                                    }}
+                                >
+                                    Dr. Bridges
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
