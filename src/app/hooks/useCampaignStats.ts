@@ -19,7 +19,7 @@ const POLL_MS = 5 * 60 * 1000 // re-fetch every 5 minutes
 
 // Published Google Sheet CSV URL — update this if the sheet changes
 const SHEET_CSV_URL =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTSGU9tafne0tavY4L5LUWtzgWnz56BwgRbz4_nmJUwchtjlAiT-B23RySu33gva_phTVRjfauqwGS2/pub?gid=0&single=true&output=csv"
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQTP68O97ZSAnyllNsw_Dc-dS9frmjJNKkvdtFM65d_-eOC-tZE8pMNGer413u8KA9YdBJclYB0OFmB/pub?output=csv"
 
 async function fetchSheet(): Promise<typeof FALLBACK> {
     const res = await fetch(SHEET_CSV_URL)
