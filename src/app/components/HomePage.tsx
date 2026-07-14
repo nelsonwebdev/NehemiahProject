@@ -196,7 +196,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                                     textTransform: "uppercase",
                                 }}
                             >
-                                Make a Gift
+                                Partner with Us
                             </button>
                         </div>
                     </div>
@@ -288,7 +288,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                             letterSpacing: "0.2em",
                         }}
                     >
-                        Foundational Scripture
+                        Guiding Scripture
                     </p>
                     <blockquote
                         className="text-white"
