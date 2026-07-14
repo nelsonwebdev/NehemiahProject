@@ -68,7 +68,7 @@ const priorities: Priority[] = [
             {
                 text: 'Messaging: "Building spaces where students thrive."',
                 boldWords: ["Messaging:"],
-            }
+            },
         ],
     },
     {
@@ -89,7 +89,7 @@ const priorities: Priority[] = [
             {
                 text: 'Messaging: "Securing Nelson\'s Future for the next century."',
                 boldWords: ["Messaging:"],
-            }
+            },
         ],
     },
 ]
@@ -175,7 +175,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <button
-                                onClick={() => onNavigate("donate")}
+                                onClick={() => onNavigate("history")}
                                 className="px-7 py-3 bg-white text-primary hover:opacity-90 transition-opacity"
                                 style={{
                                     fontFamily: "'Inter', sans-serif",
@@ -184,10 +184,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
                                     textTransform: "uppercase",
                                 }}
                             >
-                                Make a Gift
+                                Our Story
                             </button>
                             <button
-                                onClick={() => onNavigate("history")}
+                                onClick={() => onNavigate("donate")}
                                 className="px-7 py-3 border border-white/40 text-white hover:border-white transition-colors"
                                 style={{
                                     fontFamily: "'Inter', sans-serif",
@@ -196,7 +196,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                                     textTransform: "uppercase",
                                 }}
                             >
-                                Our Story
+                                Make a Gift
                             </button>
                         </div>
                     </div>
@@ -256,7 +256,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
                                     <p
                                         key={i}
                                         className={`mb-1 ${node.isBullet ? "flex items-start gap-2 pl-4" : ""}`}
-                                    ><br />
+                                    >
+                                        <br />
                                         {node.isBullet && (
                                             <span className="text-primary">
                                                 •

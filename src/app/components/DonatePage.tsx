@@ -299,52 +299,6 @@ export function DonatePage() {
                     </div>
                 </div>
             </section>
-
-            {/* Progress strip */}
-            <section className="bg-primary text-primary-foreground mt-8">
-                <div className="max-w-7xl mx-auto px-6 py-10">
-                    <div className="flex flex-col sm:flex-row gap-4 sm:items-end justify-between mb-4">
-                        <p
-                            style={{
-                                fontFamily: "'Playfair Display', serif",
-                                fontSize: "18px",
-                            }}
-                        >
-                            Campaign Progress
-                        </p>
-                        <div className="flex items-center gap-3">
-                            {loading ? (
-                                <span className="w-28 h-4 rounded bg-white/20 animate-pulse inline-block" />
-                            ) : (
-                                <p className="text-secondary text-sm">
-                                    {fmtMoney(raised)} of {fmtMoney(goal)}{" "}
-                                    raised
-                                </p>
-                            )}
-                            {lastUpdated && (
-                                <p className="text-white/30 text-xs hidden sm:block">
-                                    · updated{" "}
-                                    {lastUpdated.toLocaleTimeString([], {
-                                        hour: "2-digit",
-                                        minute: "2-digit",
-                                    })}
-                                </p>
-                            )}
-                        </div>
-                    </div>
-                    <div className="w-full bg-white/20 h-1.5 mb-2 overflow-hidden">
-                        <div
-                            className="bg-secondary h-1.5 transition-all duration-700 ease-out"
-                            style={{ width: loading ? "0%" : `${pct}%` }}
-                        />
-                    </div>
-                    <p className="text-white/40 text-xs">
-                        {loading
-                            ? "Loading campaign data…"
-                            : `${fmtPct(raised, goal)} of goal · ${fmtDonors(donors)} donors`}
-                    </p>
-                </div>
-            </section>
         </div>
     )
 }

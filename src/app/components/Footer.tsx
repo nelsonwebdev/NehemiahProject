@@ -6,7 +6,7 @@ import {
     pctNum,
 } from "../hooks/useCampaignStats"
 
-type Page = "home" | "history" | "news" | "stories" | "donate" | "contact"
+type Page = "home" | "history" | "news" | "stories" | "contact" | "donate"
 
 interface FooterProps {
     onNavigate: (page: Page) => void
@@ -91,7 +91,8 @@ export function Footer({ onNavigate }: FooterProps) {
                                     <p
                                         className="text-white"
                                         style={{
-                                            fontFamily: "'Playfair Display', serif",
+                                            fontFamily:
+                                                "'Playfair Display', serif",
                                             fontSize: "22px",
                                             fontWeight: 600,
                                         }}
@@ -127,22 +128,20 @@ export function Footer({ onNavigate }: FooterProps) {
                         Quick Links
                     </p>
                     <ul className="space-y-2 text-sm text-white/70">
-                        {(
-                            [
-                                "home",
-                                "history",
-                                "news",
-                                "stories",
-                                "donate",
-                                "contact",
-                            ] as Page[]
-                        ).map((p) => (
-                            <li key={p}>
+                        {[
+                            { label: "Home", page: "home" },
+                            { label: "History", page: "history" },
+                            { label: "News", page: "news" },
+                            { label: "Stories", page: "stories" },
+                            { label: "Contact", page: "contact" },
+                            { label: "Partner With Us", page: "donate" },
+                        ].map(({ label, page }) => (
+                            <li key={page}>
                                 <button
-                                    onClick={() => onNavigate(p)}
+                                    onClick={() => onNavigate(page as Page)}
                                     className="hover:text-white transition-colors capitalize"
                                 >
-                                    {p}
+                                    {label}
                                 </button>
                             </li>
                         ))}

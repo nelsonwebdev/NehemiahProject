@@ -1,3 +1,5 @@
+import React from "react"
+
 const timeline = [
     {
         year: "1927",
@@ -57,18 +59,10 @@ export function HistoryPage() {
             {/* Page header */}
             <section className="bg-primary text-primary-foreground">
                 <div className="max-w-7xl mx-auto px-6 py-20">
-                    <p
-                        className="text-secondary text-xs uppercase tracking-widest mb-3"
-                        style={{ fontFamily: "'Inter', sans-serif" }}
-                    >
+                    <p className="text-secondary text-xs uppercase tracking-widest mb-3 font-sans">
                         Our Story
                     </p>
-                    <h1
-                        style={{
-                            fontFamily: "'Playfair Display', serif",
-                            fontSize: "clamp(2rem, 5vw, 3rem)",
-                        }}
-                    >
+                    <h1 className="font-serif text-[clamp(2rem,5vw,3rem)]">
                         100 Years of Excellence
                     </h1>
                     <p className="text-white/60 mt-4 max-w-2xl leading-relaxed">
@@ -84,10 +78,7 @@ export function HistoryPage() {
             <div className="h-1" style={{ backgroundColor: "#a1a8ae" }} />
 
             {/* Hero image */}
-            <div
-                className="w-full bg-muted"
-                style={{ height: "340px", overflow: "hidden" }}
-            >
+            <div className="w-full bg-muted h-[340px] overflow-hidden">
                 <img
                     src="https://www.nelson.edu/wp-content/uploads/2026/06/placeholder.jpg"
                     alt="Nelson University historic campus"
@@ -98,48 +89,24 @@ export function HistoryPage() {
             {/* Intro */}
             <section className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-3 gap-12">
                 <div className="lg:col-span-2">
-                    <h2
-                        style={{
-                            fontFamily: "'Playfair Display', serif",
-                            fontSize: "clamp(1.4rem, 2.5vw, 1.9rem)",
-                        }}
-                        className="mb-5"
-                    >
+                    <h2 className="font-serif text-[clamp(1.4rem,2.5vw,1.9rem)] mb-5">
                         A Foundation Built on Bold Vision
                     </h2>
                     <div className="space-y-4 text-muted-foreground leading-relaxed text-sm">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit. Vestibulum malesuada turpis nec arcu tempor,
-                            non convallis tortor viverra. Sed sollicitudin est
-                            erat, pharetra iaculis orci vestibulum sit amet.
-                            Phasellus et consectetur orci. Maecenas quis dui
-                            placerat, faucibus lectus quis, volutpat leo. Nulla
-                            efficitur nisi nec mauris porttitor mattis.
-                            Pellentesque ut urna quis ipsum maximus
-                            sollicitudin. Duis aliquet metus elit. Quisque vitae
-                            libero id lacus venenatis tempor et non ipsum.
+                            non convallis tortor viverra.
                         </p>
                         <p>
                             Maecenas volutpat pellentesque velit ac interdum.
                             Nullam consequat bibendum augue, nec molestie nisl
-                            vulputate sed. Sed molestie et tellus eu lobortis.
-                            Fusce non ante sit amet lacus semper ullamcorper
-                            porta ut diam. Nunc sed congue massa. Nullam
-                            fermentum mauris ut tellus auctor semper. Etiam in
-                            turpis et ligula pellentesque tincidunt. Vivamus
-                            pellentesque mattis ante nec dictum.
+                            vulputate sed.
                         </p>
                         <p>
                             Suspendisse fermentum accumsan purus quis varius.
                             Suspendisse sapien metus, cursus id tristique nec,
-                            placerat vitae lacus. Integer at augue dui.
-                            Vestibulum tortor sapien, ultrices tincidunt lacinia
-                            id, suscipit at leo. Quisque a lacinia turpis, sed
-                            tempus tortor. Sed risus ex, congue eget posuere
-                            euismod, tincidunt sed quam. Aenean consequat
-                            molestie lorem non ultrices. Sed pharetra lorem quis
-                            turpis lacinia faucibus.
+                            placerat vitae lacus.
                         </p>
                     </div>
                 </div>
@@ -157,14 +124,7 @@ export function HistoryPage() {
                             <span className="text-muted-foreground text-sm">
                                 {label}
                             </span>
-                            <span
-                                className="text-primary"
-                                style={{
-                                    fontFamily: "'Playfair Display', serif",
-                                    fontSize: "22px",
-                                    fontWeight: 600,
-                                }}
-                            >
+                            <span className="text-primary font-serif text-[22px] font-semibold">
                                 {value}
                             </span>
                         </div>
@@ -172,71 +132,78 @@ export function HistoryPage() {
                 </div>
             </section>
 
-            {/* Timeline */}
+            {/* Timeline Section */}
             <section
                 className="border-y border-border py-16"
                 style={{ backgroundColor: "#f2f2f3" }}
             >
                 <div className="max-w-7xl mx-auto px-6">
-                    <p
-                        className="text-primary text-xs uppercase tracking-widest mb-2"
-                        style={{ fontFamily: "'Inter', sans-serif" }}
-                    >
+                    <p className="text-primary text-xs uppercase tracking-widest mb-2 font-sans">
                         Milestones
                     </p>
-                    <h2
-                        className="mb-12"
-                        style={{
-                            fontFamily: "'Playfair Display', serif",
-                            fontSize: "clamp(1.5rem, 3vw, 2rem)",
-                        }}
-                    >
+                    <h2 className="mb-12 font-serif text-[clamp(1.5rem,3vw,2rem)]">
                         Key Moments in Our History
                     </h2>
+
                     <div className="relative">
-                        <div className="absolute left-[72px] top-0 bottom-0 w-px bg-border hidden sm:block" />
-                        <div className="space-y-0">
-                            {timeline.map((item, i) => (
-                                <div
-                                    key={item.year}
-                                    className="flex gap-6 sm:gap-10 group"
-                                >
-                                    <div className="flex-shrink-0 w-16 text-right pt-6">
-                                        <span
-                                            className="text-primary"
-                                            style={{
-                                                fontFamily:
-                                                    "'Playfair Display', serif",
-                                                fontSize: "14px",
-                                                fontWeight: 600,
-                                            }}
-                                        >
-                                            {item.year}
-                                        </span>
+                        {/* 1. DESKTOP HORIZONTAL SCROLL (Hidden on mobile) */}
+                        <div className="hidden md:block overflow-x-auto pb-10 -mb-10 relative">
+                            <div className="absolute top-[31px] left-0 w-[2750px] h-px bg-border z-0" />
+                            <div className="flex relative min-w-[2000px] pt-6">
+                                {timeline.map((item) => (
+                                    <div
+                                        key={item.year}
+                                        className="flex-1 flex flex-col items-center text-center px-4 relative z-10"
+                                    >
+                                        {/* Dot */}
+                                        <div className="w-4 h-4 rounded-full bg-primary border-2 border-primary mb-4" />
+                                        <div className="w-[240px]">
+                                            <span className="text-primary block mb-2 font-serif font-semibold text-[14px]">
+                                                {item.year}
+                                            </span>
+                                            <h3 className="mb-2 font-serif text-[17px]">
+                                                {item.title}
+                                            </h3>
+                                            <p
+                                                className="text-muted-foreground text-sm leading-relaxed"
+                                                style={{ textAlign: "justify" }}
+                                            >
+                                                {item.body}
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div className="hidden sm:flex flex-col items-center pt-6">
-                                        <div className="w-3 h-3 rounded-full bg-primary border-2 border-primary z-10 mt-1.5 flex-shrink-0" />
-                                        {i < timeline.length - 1 && (
-                                            <div className="w-px flex-1 bg-transparent" />
-                                        )}
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* 2. MOBILE VERTICAL TIMELINE (Visible on mobile, hidden on desktop) */}
+                        <div className="md:hidden relative pt-6">
+                            {/* The vertical line is now explicitly visible on mobile */}
+                            <div className="absolute left-[7px] top-0 bottom-0 w-px bg-border z-0" />
+
+                            <div className="space-y-12">
+                                {timeline.map((item) => (
+                                    <div
+                                        key={item.year}
+                                        className="relative pl-10"
+                                    >
+                                        {/* The Dot (aligned with the vertical line) */}
+                                        <div className="absolute left-0 top-[6px] w-4 h-4 rounded-full bg-primary border-2 border-primary z-10" />
+
+                                        <div>
+                                            <span className="text-primary block mb-1 font-serif font-semibold text-[14px]">
+                                                {item.year}
+                                            </span>
+                                            <h3 className="mb-2 font-serif text-[17px]">
+                                                {item.title}
+                                            </h3>
+                                            <p className="text-muted-foreground text-sm leading-relaxed">
+                                                {item.body}
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div className="flex-1 pb-10 pt-5 border-b border-border last:border-0 sm:pl-4">
-                                        <h3
-                                            className="mb-2"
-                                            style={{
-                                                fontFamily:
-                                                    "'Playfair Display', serif",
-                                                fontSize: "17px",
-                                            }}
-                                        >
-                                            {item.title}
-                                        </h3>
-                                        <p className="text-muted-foreground text-sm leading-relaxed">
-                                            {item.body}
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

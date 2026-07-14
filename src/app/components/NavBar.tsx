@@ -13,7 +13,7 @@ const navLinks: { label: string; page: Page }[] = [
     { label: "History", page: "history" },
     { label: "News", page: "news" },
     { label: "Stories", page: "stories" },
-    { label: "Donate", page: "donate" },
+    // { label: "Partner with Us", page: "donate" },
     { label: "Contact", page: "contact" },
 ]
 
@@ -68,7 +68,7 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
                             fontSize: "12px",
                         }}
                     >
-                        Give Now
+                        Partner With Us
                     </button>
                 </nav>
 
