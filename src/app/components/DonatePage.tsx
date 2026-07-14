@@ -59,8 +59,7 @@ export function DonatePage() {
                                 The Nehemiah Project is the most ambitious
                                 undertaking in the university's 100-year
                                 history. Every dollar raised goes directly
-                                toward our three priorities: <b>[Insert priorities
-                                here]</b>.
+                                toward our three priorities: <b>Student Impact, Campus Transformation, Institutional Sustainability</b>.
                             </p>
                             <p>
                                 A gift to Nelson is not a transaction, it is a
@@ -89,23 +88,23 @@ export function DonatePage() {
                             </div>
                             {[
                                 {
-                                    amount: "$50",
+                                    amount: "$5,000",
                                     impact: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
                                 },
                                 {
-                                    amount: "$500",
+                                    amount: "$50,000",
                                     impact: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
                                 },
                                 {
-                                    amount: "$2,500",
+                                    amount: "$250,000",
                                     impact: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
                                 },
                                 {
-                                    amount: "$10,000",
+                                    amount: "$1,000,000",
                                     impact: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
                                 },
                                 {
-                                    amount: "$50,000+",
+                                    amount: "$5,000,000+",
                                     impact: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
                                 },
                             ].map(({ amount, impact }) => (
@@ -114,12 +113,13 @@ export function DonatePage() {
                                     className="flex gap-4 items-start px-6 py-4 border-b border-border last:border-0 hover:bg-secondary/20 transition-colors"
                                 >
                                     <span
-                                        className="text-primary flex-shrink-0 w-20 text-right"
+                                        className="text-primary flex-shrink-0 w-20 text-left"
                                         style={{
                                             fontFamily:
                                                 "'Playfair Display', serif",
                                             fontSize: "18px",
                                             fontWeight: 600,
+                                            marginRight: "40px"
                                         }}
                                     >
                                         {amount}

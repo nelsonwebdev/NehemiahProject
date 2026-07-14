@@ -110,7 +110,6 @@ export function ContactPage() {
                                 content: (
                                     <>
                                         <p>University Advancement</p>
-                                        <p>Farmer Administration Building</p>
                                         <p>1200 Sycamore St.</p>
                                         <p>Waxahachie, TX 75165</p>
                                     </>
@@ -414,21 +413,17 @@ export function ContactPage() {
 
             {/* Map placeholder */}
             <div className="max-w-7xl mx-auto px-6 pb-14">
-                <div
-                    className="w-full border border-border flex items-center justify-center"
-                    style={{ height: "240px", backgroundColor: "#f2f2f3" }}
-                >
-                    <div className="text-center">
-                        <p
-                            className="text-muted-foreground text-sm"
-                            style={{ fontFamily: "'Playfair Display', serif" }}
-                        >
-                            Interactive Map Embed
-                        </p>
-                        <p className="text-muted-foreground text-xs mt-1">
-                            Replace with Google Maps or Mapbox embed
-                        </p>
-                    </div>
+                <div className="w-full border border-border overflow-hidden">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4763.759261720723!2d-96.85321316929215!3d32.40612470613508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864eeedccffe2463%3A0xe47213cad9047911!2sNelson%20University!5e0!3m2!1sen!2sus!4v1784044451156!5m2!1sen!2sus"
+                        width="100%"
+                        height="450"
+                        style={{ border: 0 }}
+                        allowFullScreen={false}
+                        loading="lazy"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        title="Location Map"
+                    />
                 </div>
             </div>
         </div>
