@@ -33,11 +33,25 @@ export default function App() {
         return () => clearInterval(id)
     }, [comingSoon])
 
+    useEffect(() => {
+        // Initial page load tracking
+        if (typeof window.gtag === "function") {
+            window.gtag("config", "G-SJ0F7D60SV", { page_path: "/home" })
+        }
+    }, [])
+
     const [currentPage, setCurrentPage] = useState<Page>("home")
 
     function navigate(page: Page) {
         setCurrentPage(page)
         window.scrollTo({ top: 0, behavior: "smooth" })
+
+        // No type assertion needed anymore!
+        if (typeof window.gtag === "function") {
+            window.gtag("config", "G-SJ0F7D60SV", {
+                page_path: `/${page}`,
+            })
+        }
     }
 
     if (comingSoon) return <ComingSoonPage />

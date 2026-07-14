@@ -12,23 +12,105 @@ interface HomePageProps {
     onNavigate: (page: Page) => void
 }
 
-const priorities = [
+type DescriptionNode = {
+    text: string
+    isBullet?: boolean
+    boldWords?: string[]
+}
+
+interface Priority {
+    title: string
+    description: DescriptionNode[]
+}
+
+const priorities: Priority[] = [
     {
-        title: "Priority 1",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada turpis nec arcu tempor, non convallis tortor viverra. Sed sollicitudin est erat, pharetra iaculis orci vestibulum sit amet. Phasellus et consectetur orci.",
+        title: "Student Impact",
+        description: [
+            {
+                text: "Focus: Investing directly in student success and future generations. ",
+                boldWords: ["Focus:"],
+            },
+            {
+                text: "Potential Projects:",
+                boldWords: ["Potential Projects:"],
+            },
+            { text: "Scholarships", isBullet: true },
+            { text: "Student Support Programs", isBullet: true },
+            { text: "Academic Dean Endowment", isBullet: true },
+            { text: "Faculty & Staff Endowment", isBullet: true },
+            { text: "Generosity Endowment", isBullet: true },
+            {
+                text: 'Messaging: "Investing in students who will impact the world."',
+                boldWords: ["Messaging:"],
+            },
+            {
+                text: '"Nelson doesn\'t complete our mission until the student completes theirs."',
+            },
+        ],
     },
     {
-        title: "Priority 2",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada turpis nec arcu tempor, non convallis tortor viverra. Sed sollicitudin est erat, pharetra iaculis orci vestibulum sit amet. Phasellus et consectetur orci.",
+        title: "Campus Transformation",
+        description: [
+            {
+                text: "Focus: Creating facilities that support learning, community, and campus life. ",
+                boldWords: ["Focus:"],
+            },
+            {
+                text: "Potential Projects:",
+                boldWords: ["Potential Projects:"],
+            },
+            { text: "Health Sciences Building", isBullet: true },
+            { text: "New Housing", isBullet: true },
+            { text: "Athletics Complex Completion", isBullet: true },
+            { text: "Campus Beautification", isBullet: true },
+            { text: "Security Enhancements", isBullet: true },
+            {
+                text: 'Messaging: "Building spaces where students thrive."',
+                boldWords: ["Messaging:"],
+            }
+        ],
     },
     {
-        title: "Priority 3",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada turpis nec arcu tempor, non convallis tortor viverra. Sed sollicitudin est erat, pharetra iaculis orci vestibulum sit amet. Phasellus et consectetur orci.",
+        title: "Institutional Sustainability",
+        description: [
+            {
+                text: "Focus: Strengthening Nelson University\'s future for generations.",
+                boldWords: ["Focus:"],
+            },
+            {
+                text: "Potential Projects:",
+                boldWords: ["Potential Projects:"],
+            },
+            { text: "Debt Elimination", isBullet: true },
+            { text: "IT Infrastructure Endowment", isBullet: true },
+            { text: "Operational Endowments", isBullet: true },
+            { text: "Strategic Growth Initiatives", isBullet: true },
+            {
+                text: 'Messaging: "Securing Nelson\'s Future for the next century."',
+                boldWords: ["Messaging:"],
+            }
+        ],
     },
 ]
+
+const renderTextWithBold = (text: string, boldWords?: string[]) => {
+    if (!boldWords || boldWords.length === 0) return text
+
+    // Regex to match bold words globally and case-insensitively
+    const regex = new RegExp(`(${boldWords.join("|")})`, "gi")
+    const parts = text.split(regex)
+
+    return parts.map((part, i) =>
+        boldWords.some((w) => w.toLowerCase() === part.toLowerCase()) ? (
+            <strong key={i} className="font-semibold text-foreground">
+                {part}
+            </strong>
+        ) : (
+            part
+        ),
+    )
+}
 
 function Shimmer({ className }: { className?: string }) {
     return (
@@ -55,7 +137,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 style={{ minHeight: "560px" }}
             >
                 <div
-                    className="absolute inset-0 opacity-10"
+                    className="absolute inset-0 opacity-40"
                     style={{
                         backgroundImage: `url(https://www.nelson.edu/wp-content/uploads/2026/06/Klyde-9-1-scaled.jpg)`,
                         backgroundSize: "cover",
@@ -80,16 +162,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
                             }}
                         >
                             <img
-                                src="https://www.nelson.edu/wp-content/uploads/2026/06/Nehemiah.png"
-                                alt="University President"
+                                src="https://www.nelson.edu/wp-content/uploads/2026/07/Placeholder-500x500-1.png"
+                                alt="Nehemiah Project Logo"
                                 className="w-1/4 h-full object-cover object-top"
                             />
                             Campaign Tagline
                         </h1>
                         <p className="text-white/70 leading-relaxed mb-8 max-w-xl">
-                            A bold {fmtMoney(goal)} campaign to invest in
-                            people, programs, and places — securing Nelson's
-                            next century of excellence.
+                            A bold capital campaign to invest in people,
+                            programs, and places — securing Nelson's next
+                            century of excellence.
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <button
@@ -233,9 +315,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     </button>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {priorities.map((p) => (
+                    {priorities.map((item, index) => (
                         <div
-                            key={p.title}
+                            key={index}
                             className="bg-card border border-border p-6 hover:border-primary/40 transition-colors group"
                         >
                             <span className="text-primary text-xs mb-4 block">
@@ -248,11 +330,29 @@ export function HomePage({ onNavigate }: HomePageProps) {
                                     fontSize: "17px",
                                 }}
                             >
-                                {p.title}
+                                {item.title}
                             </h3>
-                            <p className="text-muted-foreground text-sm leading-relaxed">
-                                {p.description}
-                            </p>
+                            {/* Container for the multi-line description */}
+                            <div className="text-muted-foreground text-sm leading-relaxed">
+                                {item.description.map((node, i) => (
+                                    <p
+                                        key={i}
+                                        className={`mb-1 ${node.isBullet ? "flex items-start gap-2 pl-4" : ""}`}
+                                    ><br />
+                                        {node.isBullet && (
+                                            <span className="text-primary">
+                                                •
+                                            </span>
+                                        )}
+                                        <span>
+                                            {renderTextWithBold(
+                                                node.text,
+                                                node.boldWords,
+                                            )}
+                                        </span>
+                                    </p>
+                                ))}
+                            </div>
                         </div>
                     ))}
                 </div>
